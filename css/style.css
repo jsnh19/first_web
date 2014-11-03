@@ -1,0 +1,80 @@
+.container{
+	width: 50%;
+	margin-bottom: 60px;
+	border-radius:10px;
+	background-color: gray;
+}
+.blog-nav{
+	background-color:#1e1e1e;
+	border-radius: 30px;
+	top: 0;
+	position: fixed;
+	left: 0;
+	right: 0;
+}
+.blog-nav-item{
+	display: inline-block;
+	padding: 10px;
+	font-weight: 300;
+	color: White;
+	margin-left: 15%;
+}
+.blog-nav-item-imp{
+	display: inline-block;
+	padding: 10px;
+	font-weight: 300;
+	color: White;
+	margin-left: 45%;
+	
+}
+.blog-nav-item-imp:hover{
+	background-color: #b3b3b3;
+	font-weight:bold;
+	border-radius:15px;
+	color: White;
+}
+.blog-nav-item:hover{
+	background-color: #b3b3b3;
+	font-weight:bold;
+	border-radius:15px;
+	color: White;
+}
+.blog-title{
+	text-transform: uppercase;
+	text-align: center;
+}
+.blog-desc{
+	text-align: center;
+	font-size: 26px;
+}
+.blog-text{
+	text-align: center;
+	font-size: 20px;
+}
+.blog-footer{
+	color: #999;
+	text-align: center;
+	background-color: #f9f9f9;
+	border-top: #e5e5e5;	
+	bottom: 0;
+	left:0;
+	right: 0;
+	position: fixed;
+}
+.row{
+	text-align: center;
+}
+.col-md-8 blog-main{
+	text-align: center;
+}
+.blog-list{
+	text-align: center;
+	font-size: 20px;
+}
+.blog-impressum{
+	color: graytext;
+}
+.blog-impressum-erecht{
+	color: black;
+	margin-left: 35%;
+}
