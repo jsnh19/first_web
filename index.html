@@ -26,53 +26,55 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#nav-1").click(function(){
+	    $("#blog-text").load("text/latest.txt");
+	  });
+	$("#impressum").click(function(){
+		if($("#impressum").text() == "Impressum"){
+			$("#blog-text").load("text/imp.txt");
+		    $("#impressum").text("back to site"); 
+		}else{
+			$("#blog-text").load("text/latest.txt");
+		    $("#impressum").text("Impressum"); 
+		}
+	    
+	  });
+});
+</script>
+
 </head>
 
 <body>
 
-<div class="nav-bar">
-	<div class = "container">
-		<nav class="blog-nav">
-		<a class="blog-nav-item">Test1</a>
-		<a class="blog-nav-item">Test1</a>
-		<a class="blog-nav-item">Test1</a>
-		<a class="blog-nav-item">Test1</a>
-		</nav>
+	<div class="nav-bar">
+		<div class="container">
+			<nav class="blog-nav"> 
+			<a class="blog-nav-item" id="nav-1">Load latest Article</a> 
+			<a class="blog-nav-item" id="nav-2">Test1</a> 
+			<a class="blog-nav-item" id="nav-3">Test1</a> 
+			<a class="blog-nav-item" id="nav-4">Test1</a> 
+			</nav>
+		</div>
 	</div>
-</div>
 
 	<div class="container">
-	
-		<div class="blog-header">
+
+		<div class="blog-header" id="blog-text"></div>
 		
-			<h1 class="blog-title">Julius Schönhuts Blog</h1>
-			<p class="blog-text">Hier möchte ich ihnen mein Programm aus OOP vorstellen!</p>
-			<p class="blog-text">Es ist ein mit Java nachprogrammiertes Breakout.</p>
-			<p class="blog-text">Vorteile sind:</p>
-			
-			
-  			<li class="blog-list">Speicherung von Highscores in einer SQL-Datenbank.</li>
-      		<li class="blog-list">Eigenes Design von Leveln ist möglich!</li>
-      		<li class="blog-list">Komplett auf Java basierend.</li>
-      		<li class="blog-list">Mp3-Musik Support!</li>
-  			
-			
-			<p class="blog-text"></p>
-			<p class="blog-text">Text wird später vervöllständigt,mit bildern sowie Sourcecode.</p>
-			
-			
-		
-		</div>
-	
-	
+		<script>$("#blog-text").load("text/latest.txt");</script>
+
 	</div>
-	
+
 	<div class="blog-footer">
-		
-			<p class="blog-footer-text">Build with Bootstrap by Julius Schönhut</p>
-			<a class="blog-impressum" href="html/imp.html">Impressum</a>
-		
-		</div>
+
+		<p class="blog-footer-text">Build with Bootstrap by Julius Schönhut</p>
+		<a class="blog-impressum" id="impressum">Impressum</a>
+
+	</div>
 
 
 </body>

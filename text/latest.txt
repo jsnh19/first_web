@@ -1,0 +1,13 @@
+<h1 class="blog-title">Julius Schönhuts Blog</h1>
+<p class="blog-text">Hier möchte ich ihnen mein Programm aus OOP vorstellen!</p>
+<p class="blog-text">Es ist ein mit Java nachprogrammiertes Breakout.</p>
+<p class="blog-text">Vorteile sind:</p>
+<li class="blog-list">Speicherung von Highscores in einer SQL-Datenbank.</li>
+<li class="blog-list">Eigenes Design von Leveln ist möglich!</li>
+<li class="blog-list">Komplett auf Java basierend.</li>
+<li class="blog-list">Mp3-Musik Support!</li>
+<p class="blog-text"></p>
+<p class="blog-text">Text wird später vervöllständigt,mit bildern sowie Sourcecode.</p>
+<p class="blog-text">Text wird später vervöllständigt,mit bildern sowie Sourcecode.</p>
+<p class="blog-text">Text wird später vervöllständigt,mit bildern sowie Sourcecode.</p>
+<p class="blog-text">Text wird später vervöllständigt,mit bildern sowie Sourcecode.</p>

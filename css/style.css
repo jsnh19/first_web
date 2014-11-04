@@ -74,6 +74,9 @@
 .blog-impressum{
 	color: graytext;
 }
+.blog-impressum:hover{
+	text-decoration: underline;
+}
 .blog-impressum-erecht{
 	color: black;
 	margin-left: 35%;
