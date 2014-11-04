@@ -1,0 +1,130 @@
+
+<h1 class="blog-title">Sourcecode</h1>
+<p class="blog-text">Den SourceCode von Breakout können sie hier sehen.</p>
+<a href="http://www.github.com/jsnh19/Breakout" class="blog-impressum-erecht">Breakout auf Github</a>
+<p class="blog-text"></p>
+
+<div class="pre-spoiler">
+<input name="button" type="button" onClick="if (this.parentNode.getElementsByTagName('div')[0].style.display != 'none') { this.parentNode.getElementsByTagName('div')[0].style.display = 'none'; this.value = 'me.zero.cc.Graphics'; } else { this.parentNode.getElementsByTagName('div')[0].style.display = 'block'; this.value = 'me.zero.cc.Graphics';}" value="me.zero.cc.Graphics">
+<div class="spoiler" style="display: none;">
+
+<input name="button" type="button" onClick="if (this.parentNode.getElementsByTagName('div')[0].style.display != 'none') { this.parentNode.getElementsByTagName('div')[0].style.display = 'none'; this.value = 'me.zero.cc.Graphics.Ui'; } else { this.parentNode.getElementsByTagName('div')[0].style.display = 'block'; this.value = 'me.zero.cc.Graphics.Ui';}" value="me.zero.cc.Graphics.Ui">
+<div class="spoiler" style="display: none;">
+
+<input name="button" type="button" onClick="if (this.parentNode.getElementsByTagName('div')[0].style.display != 'none') { this.parentNode.getElementsByTagName('div')[0].style.display = 'none'; this.value = 'me.zero.cc.Graphics.Ui.Level'; } else { this.parentNode.getElementsByTagName('div')[0].style.display = 'block'; this.value = 'me.zero.cc.Graphics.Ui.Level';}" value="me.zero.cc.Graphics.Ui.Level">
+<div class="spoiler" style="display: none;">
+
+<input name="button" type="button" onClick="if (this.parentNode.getElementsByTagName('div')[0].style.display != 'none') { this.parentNode.getElementsByTagName('div')[0].style.display = 'none';} else { this.parentNode.getElementsByTagName('div')[0].style.display = 'block';}" value=".Level">
+<div class="spoiler" style="display: none;">
+
+<p>
+<!-- <script>$("#blog-text").load("text/SourceCode/me.zero.cc.Graphics.Ui.Level.html");</script> -->
+</p>
+</div> 
+<br>
+<input name="button" type="button" onClick="if (this.parentNode.getElementsByTagName('div')[0].style.display != 'none') { this.parentNode.getElementsByTagName('div')[0].style.display = 'none'; this.value = 'me.zero.cc.Graphics.Ui.LevelEditor'; } else { this.parentNode.getElementsByTagName('div')[0].style.display = 'block'; this.value = 'me.zero.cc.Graphics.Ui.LevelEditor';}" value="LevelEditor">
+<div class="spoiler" style="display: none;">
+
+<p>
+
+package me.zero.cc.Graphics.Ui.Level;<br><br>
+import java.io.BufferedReader;<br>
+import java.io.BufferedWriter;<br>
+import java.io.File;<br>
+import java.io.FileNotFoundException;<br>
+import java.io.FileReader;<br>
+import java.io.FileWriter;<br>
+import java.io.IOException;<br>
+import java.io.InputStreamReader;<br>
+import me.zero.cc.utils.Player.Speicher;<br>
+public class LevelEditor {<br>
+private Speicher speicher;<br><br>
+public LevelEditor(Speicher speicher){<br>
+this.speicher = speicher;<br>
+}	<br>
+public void LoadLevel(){	<br>
+try {<br>
+WriteLevelToHDD();<br>
+loadLvlFile();<br>
+} catch (IOException e) {<br>
+e.printStackTrace();<br>
+}<br>
+}<br>
+private void loadLvlFile() throws FileNotFoundException{<br>
+File dir = new File(System.getProperty("user.dir") + "/level");<br>
+//File dir = new File("C:/Users/Julius/Desktop/break/level");<br>
+int count = dir.list().length;<br>
+for(int i = 0; i < count;i++){<br>
+System.out.println("Loading level" + i + ".lvl (...)");<br>
+FileReader reader = new FileReader(new File(System.getProperty("user.dir") + "/level/level" + i + ".lvl"));<br>
+//FileReader reader = new FileReader(new File("C:/Users/Julius/Desktop/break/level/level" + i + ".lvl"));<br>
+@SuppressWarnings("resource")<br>
+BufferedReader bf = new BufferedReader(reader);<br>
+Level level = new Level();<br>
+try {<br>
+String msg = bf.readLine();	<br>
+while(msg != null){<br>
+if(!msg.contains("#")){<br>
+if(msg.contains("music=")){<br>
+level.setPathtomusik(msg.split("music=")[1]);<br>
+}else if(msg.contains("framesizex=")){<br>
+level.setFramesizex(Integer.parseInt(msg.split("framesizex=")[1]));<br>
+}else if(msg.contains("framesizey=")){<br>
+level.setFramesizey(Integer.parseInt(msg.split("framesizey=")[1]));<br>
+}else if(msg.contains("playersizex=")){<br>
+level.setPlayersizex(Integer.parseInt(msg.split("playersizex=")[1]));<br>
+}else if(msg.contains("playersizey=")){<br>
+level.setPlayersizey(Integer.parseInt(msg.split("playersizey=")[1]));<br>
+}else if(msg.contains("ballsizex=")){<br>
+level.setBallsizex(Integer.parseInt(msg.split("ballsizex=")[1]));<br>
+}else if(msg.contains("ballsizey=")){<br>
+level.setBallsizey(Integer.parseInt(msg.split("ballsizey=")[1]));<br>
+}else{<br>
+level.addAufbau(msg);<br>
+}<br>
+}<br>
+msg = bf.readLine();<br>	
+}<br>
+speicher.addLevel(level);<br>
+} catch (IOException e) {<br>
+e.printStackTrace();<br>
+}<br>
+}	<br>
+}<br>
+public void WriteLevelToHDD() throws IOException{<br>
+File fold = new File("level");<br>
+//File fold = new File("C:/Users/Julius/Desktop/break/level");<br>
+if(!fold.exists()){<br>
+fold.mkdir();<br>
+}<br>
+for(int i = 0; i < 4;i++){<br>
+File file = new File(System.getProperty("user.dir") + "/level/level" + i + ".lvl");<br>
+//File file = new File("C:/Users/Julius/Desktop/break/level/level" + i + ".lvl");<br>
+if(!file.exists()){<br>
+file.createNewFile();<br>
+FileWriter fileWriter = new FileWriter(file);<br>
+BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);<br>
+InputStreamReader inputStreamReader = new InputStreamReader(getClass().getResourceAsStream("/level/level" + i + ".lvl"));<br>
+BufferedReader bf = new BufferedReader(inputStreamReader);<br>
+String msg = bf.readLine();<br>
+while(msg != null){	<br>
+bufferedWriter.write(msg);<br>
+bufferedWriter.newLine();<br>
+msg = bf.readLine();<br>
+}<br>
+bufferedWriter.close();<br>
+}<br>
+}<br>
+}<br>
+}<br>
+
+</p>
+
+
+</div> 
+
+</div> 
+
+</div> 
+
+</div> 

@@ -1,8 +1,11 @@
+.body{
+	background-image: url("../images/background.jpg");
+}
 .container{
 	width: 50%;
 	margin-bottom: 60px;
 	border-radius:10px;
-	background-color: gray;
+	background-image: url("../images/kasten.gif");
 }
 .blog-nav{
 	background-color:#1e1e1e;
@@ -38,6 +41,7 @@
 	font-weight:bold;
 	border-radius:15px;
 	color: White;
+	cursor: pointer;
 }
 .blog-title{
 	text-transform: uppercase;
@@ -54,12 +58,12 @@
 .blog-footer{
 	color: #999;
 	text-align: center;
-	background-color: #f9f9f9;
 	border-top: #e5e5e5;	
-	bottom: 0;
-	left:0;
-	right: 0;
-	position: fixed;
+	height: 50px;
+}
+.blog-footer-text{
+	color: black;
+	margin-bottom: 1px;
 }
 .row{
 	text-align: center;
@@ -72,9 +76,22 @@
 	font-size: 20px;
 }
 .blog-impressum{
-	color: graytext;
+	color: black;
+}
+.blog-impressum:hover{
+	text-decoration: underline;
+	cursor: pointer;
 }
 .blog-impressum-erecht{
 	color: black;
 	margin-left: 35%;
+}
+.blog-impressum-erecht:hover{
+	color: black;
+	margin-left: 35%;
+	cursor: pointer;
+	text-decoration: underline;
+}
+.spoiler{
+	
 }
