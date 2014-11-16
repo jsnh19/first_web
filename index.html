@@ -29,20 +29,21 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
+
 $(document).ready(function(){
-	$("#nav-1").click(function(){
-	    $("#blog-text").load("text/SourceCode.html");
-	    $("#impressum").text("back to site"); 
+	$("#navbar").find("li").click(function(){
+		$(this).parent().children(".active").removeClass("active");
+		$(this).addClass("active");
+	  });
+	$("#home").click(function(){
+		$("#blog-text").load("text/latest.html");
+	  });
+	$("#sourcecode").click(function(){
+	    	$("#blog-text").load("text/SourceCode.html");
 	  });
 	$("#impressum").click(function(){
-		if($("#impressum").text() == "Impressum"){
-			$("#blog-text").load("text/imp.html");
-		    $("#impressum").text("back to site"); 
-		}else{
-			$("#blog-text").load("text/latest.html");
-		    $("#impressum").text("Impressum"); 
-		}
-	    
+		$("#navbar").find(".active").removeClass("active");
+		$("#blog-text").load("text/imp.html");
 	  });
 });
 </script>
@@ -51,16 +52,26 @@ $(document).ready(function(){
 
 <body class="body">
 
-	<div class="nav-bar">
-		<div class="container">
-			<nav class="blog-nav"> 
-			<a class="blog-nav-item" id="nav-1">Show Sourcecode</a> 
-			<a class="blog-nav-item" id="nav-2">Test1</a> 
-			<a class="blog-nav-item" id="nav-3">Test1</a> 
-			<a class="blog-nav-item" id="nav-4">Test1</a> 
-			</nav>
-		</div>
-	</div>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="">Julius Schönhuts Blog</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li id="home" class="active"><a href="#">Home</a></li>
+            <li id="sourcecode"><a href="#">Sourcecode</a></li>
+
+          </ul>
+        </div><!--/.nav-collapse -->
+
+    </nav>
 
 	<div class="container">
 
