@@ -82,5 +82,6 @@
 }
 #headcontainer{
 	text-align: center;
+	border: 0px;
 	background-image: url("");
 }
