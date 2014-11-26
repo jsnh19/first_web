@@ -1,15 +1,18 @@
 .body{
 	padding-top: 50px;
-	<!------ background-image: url("../images/background.jpg"); -->
-	
+	background-image: url("../images/background_new.jpg");
+	background-size: 100%;
+	background-attachment:scroll;	
+	background-repeat:no-repeat;
+	background-position: center;
 }
 .container{
-	width: 50%;
 	margin-top: 10px;
 	margin-bottom: 60px;
 	border-radius:10px;
-	<!------ background-image: url("../images/kasten.gif"); -->
 	
+	border: 1px solid black;
+	background-image: url("../images/kasten.gif");
 }
 .blog-nav-item-imp{
 	display: inline-block;
