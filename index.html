@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 5.0 Transitional//EN" "http://www.w3.org/TR/html5/loose.dtd">
 
 <html>
 <head>
@@ -18,26 +18,8 @@
 <link href="css/style.css" rel="stylesheet">
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="script/loadText.js"></script>
-<script>
-
-$(document).ready(function(){
-	$("#navbar").find("li").click(function(){
-		$(this).parent().children(".active").removeClass("active");
-		$(this).addClass("active");
-	  });
-	$("#home").click(function(){
-		$("#blog-text").load("text/latest.html");
-	  });
-	$("#sourcecode").click(function(){
-	    	$("#blog-text").load("text/SourceCode.html");
-	  });
-	$("#impressum").click(function(){
-		$("#navbar").find(".active").removeClass("active");
-		$("#blog-text").load("text/imp.html");
-	  });
-});
-</script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/loadText.js"></script>
 
 </head>
 
@@ -58,23 +40,30 @@ $(document).ready(function(){
           <ul class="nav navbar-nav">
             <li id="home" class="active"><a href="#">Home</a></li>
             <li id="sourcecode"><a href="#">Sourcecode</a></li>
+            <li id="Level-Tutorial"><a href="#">Level-Tutorial</a></li>
 
           </ul>
         </div><!--/.nav-collapse -->
 
     </nav>
 
+	<div class="container" id="headcontainer">	
+		
+		<h1>Julius's Blog</h1>
+			
+	</div>
+
 	<div class="container">
 
-		<div class="blog-header" id="blog-text"></div>
+		<div class="blog-text" id="blog-text"></div>
 		
 		<script>$("#blog-text").load("text/latest.html");</script>
 
 	</div>
 
 	<div class="blog-footer">
-
-		<p class="blog-footer-text">Build with <a class="blog-impressum" href="http://www.getbootstrap.com">Bootstrap</a> by Julius Schönhut</p>
+	<a href="http://www.mediafire.com/download/vmou1ap2n7pu358/Breakout.jar">Download</a>
+		<p class="blog-footer-text">Build with <a class="blog-impressum" href="http://www.getbootstrap.com">Bootstrap</a> supported by <a class="blog-impressum" href="http://glyphicons.com/">Glyphicons</a> by Julius Schönhut</p>
 		<a class="blog-impressum" id="impressum">Impressum</a>
 
 	</div>
