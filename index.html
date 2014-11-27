@@ -17,9 +17,19 @@
 <!-- Custom styles for this template -->
 <link href="css/style.css" rel="stylesheet">
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<script src="js/jquery.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script src="js/loadText.js"></script>
+<script src="js/jquery.unicornblast.js"></script>
+		<script>
+			$(window).load(function() {
+				$("#button").unicornblast();
+				$('#button').unicornblast({
+					start : 'konamiCode'
+				});
+			});
+		</script>
 </head>
 
 <body class="body">
