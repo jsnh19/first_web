@@ -17,13 +17,47 @@
 <!-- Custom styles for this template -->
 <link href="css/style.css" rel="stylesheet">
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<script src="js/jquery.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type= "text/javascript" src="js/loadText.js"></script>
 
+<script src="js/loadText.js"></script>
+<script src="js/jquery.unicornblast.js"></script>
+		<script>
+			$(window).load(function() {
+				$("#button").unicornblast();
+				$('#button').unicornblast({
+					start : 'konamiCode'
+				});
+			});
+		</script>
 </head>
 
 <body class="body">
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Hier sind einige links!</h4>
+      </div>
+      <div class="modal-body">
+        <a href="http://www.codecademy.com/jsnh19">Me @ Codecademy</a><br>
+        <a href="https://github.com/jsnh19/IBS">Forked Homepage of mhn55</a><br>
+        <a href="https://github.com/mhnn55/first_web">Fork of my Homepage</a><br>
+        <a></a>
+        <a></a>      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>		
+</script>
 
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
@@ -41,13 +75,14 @@
             <li id="home" class="active"><a href="#">Home</a></li>
             <li id="sourcecode"><a href="#">Sourcecode</a></li>
             <li id="Level-Tutorial"><a href="#">Level-Tutorial</a></li>
-			<li id="Wikipedia-search">
-  					<form name="search" method="post" action="http://de.wikipedia.org/wiki/Spezial:Suche" target="_blank" id="wiki-search">
+            <li id="Issues"><a href="#">Issues</a></li>           
+            <li id="wiki-search">
+            	 <form name="search" method="post" action="http://de.wikipedia.org/wiki/Spezial:Suche" target="_blank">
     					<input type="text" name="search" size="18" value="Wikipedia Suche" />
     					<input type="submit" name="go" value="Los" />
     					<input type="submit" name="fulltext" value="Suche" />
-  					</form>
-			</li>
+  					</form>  
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
 
@@ -64,6 +99,7 @@
 
 		<div class="blog-text" id="blog-text"></div>
 		
+		<script type="text/javascript">$("#myModal").modal("toggle");</script>
 		<script>$("#blog-text").load("text/latest.html");</script>
 
 	</div>

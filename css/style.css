@@ -82,9 +82,9 @@
 }
 #headcontainer{
 	text-align: center;
+	border: 0px;
 	background-image: url("");
 }
 #wiki-search{
 	margin-top: 2%;
-	margin-left: 2%;
 }
