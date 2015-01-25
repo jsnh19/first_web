@@ -17,9 +17,21 @@
 <!-- Custom styles for this template -->
 <link href="css/style.css" rel="stylesheet">
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<script src="js/jquery.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type= "text/javascript" src="js/loadText.js"></script>
+
 <script src="js/loadText.js"></script>
+<script src="js/jquery.unicornblast.js"></script>
+		<script>
+			$(window).load(function() {
+				$("#button").unicornblast();
+				$('#button').unicornblast({
+					start : 'konamiCode'
+				});
+			});
+		</script>
 </head>
 
 <body class="body">
@@ -49,6 +61,8 @@
 			<li>Sencha Architect übrigens funktionerte in der Vm mit Ubuntu 14 garnicht</li>
         </ul>
         <p>Den Rest der Aufgaben hatte ich schon aus Intresse vor der Aufgabenstellung</p>
+
+        <a></a>      
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -74,7 +88,14 @@
             <li id="home" class="active"><a href="#">Home</a></li>
             <li id="sourcecode"><a href="#">Sourcecode</a></li>
             <li id="Level-Tutorial"><a href="#">Level-Tutorial</a></li>
-             <li id="Issues"><a href="#">Issues</a></li>
+            <li id="Issues"><a href="#">Issues</a></li>           
+            <li id="wiki-search">
+            	 <form name="search" method="post" action="http://de.wikipedia.org/wiki/Spezial:Suche" target="_blank">
+    					<input type="text" name="search" size="18" value="Wikipedia Suche" />
+    					<input type="submit" name="go" value="Los" />
+    					<input type="submit" name="fulltext" value="Suche" />
+  					</form>  
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
 
